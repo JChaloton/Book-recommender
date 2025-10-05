@@ -14,3 +14,6 @@ chroma_books/
 .idea/
 *.swp
 
+# Windows ADS metadata
+*:Zone.Identifier
+
