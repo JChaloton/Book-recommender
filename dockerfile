@@ -1,0 +1,25 @@
+FROM python:3.11-slim
+
+ENV PYTHONUNBUFFERED=1
+
+WORKDIR /usr/src/app
+
+COPY . .
+
+ENV GRADIO_SERVER_NAME=0.0.0.0 \
+    GRADIO_SERVER_PORT=7860 \
+    GRADIO_ANALYTICS_ENABLED=False \
+    CHROMA_TELEMETRY="" \
+    CHROMA_DISABLE_TELEMETRY=True \
+    CHROMADB_TELEMETRY="" \
+    CHROMADB_DISABLE_TELEMETRY=True \
+    CHROMA_ANONYMIZE_TELEMETRY=False \
+    SENTRY_DSN="" \
+    SENTRY_ENVIRONMENT="" \
+    SENTRY_RELEASE=""
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+EXPOSE 7860
+
+CMD ["python", "./gradio-dashboard.py"]
