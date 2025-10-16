@@ -46,7 +46,7 @@ FastEmbed runs on CPU via ONNX Runtime, keeps the image small, and requires no G
 ```bash
 python gradio-dashboard.py
 ```
-The app listens on `http://127.0.0.1:7860/` by default.
+The app listens on `http://localhost:7860/` by default.
 
 ## Run with Docker
 Build the image:
